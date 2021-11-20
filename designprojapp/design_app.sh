@@ -3,9 +3,9 @@ mkdir tempdir
 mkdir tempdir/templates
 mkdir tempdir/static
 
-cp design_app.py tempdir/.
-cp -r templates/* tempdir/templates/.
-cp -r static/* tempdir/static/.
+cp designprojapp/design_app.py tempdir/.
+cp -r designprojapp/templates/* tempdir/templates/.
+cp -r designprojapp/static/* tempdir/static/.
 
 echo "FROM python" > tempdir/Dockerfile
 echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
