@@ -1,11 +1,11 @@
 #!/bin/bash
-mkdir tempdir
-mkdir tempdir/templates
-mkdir tempdir/static
+mkdir designprojapp/tempdir
+mkdir designprojapp/tempdir/templates
+mkdir designprojapp/tempdir/static
 
-cp design_app.py tempdir/.
-cp -r templates/* tempdir/templates/.
-cp -r static/* tempdir/static/.
+cp designprojapp/design_app.py tempdir/.
+cp -r designprojapp/templates/* tempdir/templates/.
+cp -r designprojapp/static/* tempdir/static/.
 
 echo "FROM python" > tempdir/Dockerfile
 echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
@@ -18,4 +18,3 @@ echo "CMD python3 /home/myapp/design_app.py" >> tempdir/Dockerfile
 cd tempdir
 docker build -t design_app .
 docker run -t -d -p 5050:5050 --name design_apprunning design_app
-docker ps -a
