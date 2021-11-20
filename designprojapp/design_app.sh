@@ -1,7 +1,7 @@
 #!/bin/bash
-mkdir designprojapp/tempdir
-mkdir designprojapp/tempdir/templates
-mkdir designprojapp/tempdir/static
+mkdir -p designprojapp/tempdir
+mkdir -p designprojapp/tempdir/templates
+mkdir -p designprojapp/tempdir/static
 
 cp designprojapp/design_app.py tempdir/.
 cp -r designprojapp/templates/* tempdir/templates/.
